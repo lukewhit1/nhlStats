@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "959139074213",
+    "project_id": "nhlstats-64022",
+    "storage_bucket": "nhlstats-64022.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:959139074213:android:2819042c184811e1ecfd4c",
+        "android_client_info": {
+          "package_name": "com.example.nhlstatsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "959139074213-f2c8imue3qn9kqjvcvh8rtobvknl0b3t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgNQyunKHJ562N881twU_fMCwMiuuYXFM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "959139074213-f2c8imue3qn9kqjvcvh8rtobvknl0b3t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
