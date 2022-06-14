@@ -25,6 +25,7 @@ class PlayerStatsRepositoryImpl @Inject constructor(private val searchService: S
                 throw Exception("Failed Network Call")
             }
         } catch (e: Exception) {
+            println("$e")
             emit(UIState.Error(e))
         }
     }

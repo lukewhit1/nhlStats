@@ -33,16 +33,19 @@ class ListFragment(private val playerName: String): ViewModelFragment() {
         viewModel.searchList.observe(viewLifecycleOwner) {
             when(it) {
                 is UIState.Success<*> -> {
-                    //Log.d("configureObserver()", "success")
+                    binding.pbLoadingSearch.visibility = View.GONE
+                    println("search success")
                     parsePlayerList(it.response as SearchByNameResponse)
                 }
                 is UIState.Error -> {
+                    println("search error")
                     binding.apply {
-                        //TODO
-                        //Log.d("configureObserver()", "error")
+                        tvError.text = "Network call Failed"
+                        pbLoadingSearch.visibility = View.GONE
                     }
                 }
                 is UIState.Loading -> {
+                    println("search loading")
                     viewModel.getPlayersByName(playerName = playerName)
                 }
             }
@@ -53,18 +56,18 @@ class ListFragment(private val playerName: String): ViewModelFragment() {
         viewModel.singleStats.observe(viewLifecycleOwner) {
             when (it) {
                 is UIState.Success<*> -> {
-                    println("    success")
+                    println("stats success")
                     println(it.response)
                     //getCompletePlayerInfo(it.response as StatsByPlayer, playerStats)
                 }
                 is UIState.Error -> {
+                    println("stats error")
                     binding.apply {
                         //TODO
-                        println("   error")
                     }
                 }
                 is UIState.Loading -> {
-                    println("   loading")
+                    println("stats loading")
                     viewModel.getSinglePlayerStats(playerStats.playerId)
                 }
             }
